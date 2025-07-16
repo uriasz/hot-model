@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="components/cabecalho/styles.css?">
+</head>
+
 <div class="header">
         <div class="logo"><img src="assets/logo-pjf.png"></div>
         <div class="menu-cab">
@@ -14,30 +18,3 @@
         </div>
     </div>
 
-<style>
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0%;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    background-color: #f8f9fa;
-    font-family: sans-serif;
-    font-weight: bold;
-    border-bottom: #757575ff;
-    border-bottom-style: solid;
-  }
-
-  .menu-list {
-    display: flex;
-    gap: 100px;
-    list-style: none;
-  }
-
-    .menu-item a {
-        text-decoration: none;
-        color: #5e0ca1ff;
-    }
-</style>
