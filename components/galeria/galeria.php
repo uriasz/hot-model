@@ -11,7 +11,8 @@
 </head>
 
 <section class="card-section">
-    <h1>SECTION TITLE</h1>
+    <!-- atualizar para "programação" ou o que couber melhor -->
+    <h1>Galeria</h1>
 
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Pesquisar" />
@@ -31,57 +32,57 @@
 </section>
 
 <script>
-  // Recebe a lista de imagens do PHP
-  const imagens = <?php echo json_encode($imagens); ?>;
+    // Recebe a lista de imagens do PHP
+    const imagens = <?php echo json_encode($imagens); ?>;
 
-  // Cria dinamicamente os cards com imagens
- function criarCard(nomeImagem) {
-  const card = document.createElement('div');
-  card.className = 'card';
+    // Cria dinamicamente os cards com imagens
+    function criarCard(nomeImagem) {
+        const card = document.createElement('div');
+        card.className = 'card';
 
-  const img = document.createElement('img');
-  img.src = 'components/galeria/imagens/' + nomeImagem;
-  img.alt = nomeImagem;
-  img.className = 'card-img';
+        const img = document.createElement('img');
+        img.src = 'components/galeria/imagens/' + nomeImagem;
+        img.alt = nomeImagem;
+        img.className = 'card-img';
 
-  card.appendChild(img);
+        card.appendChild(img);
 
-  // Adiciona evento para abrir modal
-  card.onclick = function() {
-    document.getElementById('modalImg').src = img.src;
-    document.getElementById('imageModal').style.display = 'flex';
-  };
+        // Adiciona evento para abrir modal
+        card.onclick = function() {
+        document.getElementById('modalImg').src = img.src;
+        document.getElementById('imageModal').style.display = 'flex';
+    };
 
-  return card;
-}
-
-// Fecha o modal ao clicar no X
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('closeModal').onclick = function() {
-    document.getElementById('imageModal').style.display = 'none';
-  };
-  // Fecha ao clicar fora da imagem
-  document.getElementById('imageModal').onclick = function(e) {
-    if (e.target === this) {
-      this.style.display = 'none';
+    return card;
     }
-  };
-});
+
+    // Fecha o modal ao clicar no X
+    document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('closeModal').onclick = function() {
+    document.getElementById('imageModal').style.display = 'none';
+    };
+    // Fecha ao clicar fora da imagem
+    document.getElementById('imageModal').onclick = function(e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+    }
+    };
+    });
 
   // Adiciona os cards no container
-  const container = document.getElementById('cardsContainer');
-  imagens.forEach(nomeImagem => {
+    const container = document.getElementById('cardsContainer');
+    imagens.forEach(nomeImagem => {
     const card = criarCard(nomeImagem);
     container.appendChild(card);
   });
 
   // Filtro simples para busca de cards pelo nome da imagem
   function filtrarCards() {
-    const termo = document.getElementById('searchInput').value.toLowerCase();
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-      const legenda = card.querySelector('span').textContent.toLowerCase();
-      card.style.display = legenda.includes(termo) ? 'flex' : 'none';
+        const termo = document.getElementById('searchInput').value.toLowerCase();
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+        const legenda = card.querySelector('span').textContent.toLowerCase();
+        card.style.display = legenda.includes(termo) ? 'flex' : 'none';
     });
   }
 </script>
