@@ -57,23 +57,65 @@ body {
 .card {
   background-color: #652E72;
   height: 200px;
-  width: 300;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
   border-radius: 10px;
   border: 1px solid #000000;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: transform 0.2s ease;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0;
+  display: block;
 }
 
 .card:hover {
   transform: scale(1.05);
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #000;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+}
 /* Estiliza o track (área de fundo da barra) */
 ::-webkit-scrollbar {
   width: 8px; /* largura vertical */
