@@ -1,0 +1,113 @@
+.noticias-container {
+    background: #19CCB2;
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.noticias-titulo {
+    z-index: 1;
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #222;
+    text-align: center;
+}
+
+.carrossel-noticias {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.carrossel-seta {
+    position: relative;
+    bottom: 5em;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #222;
+    cursor: pointer;
+    width: 60px;
+    height: 100%;
+    transition: color 0.2s;
+}
+
+.carrossel-seta:hover {
+    color: #652E72;
+}
+
+.noticia-card {
+    position: relative;
+    bottom: 9.6em;
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 40px 30px 30px 30px;
+    min-width: 350px;
+    max-width: 500px;
+    max-height: 700px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #222;
+    border-top: none;
+    transition: opacity 0.4s;
+    opacity: 1;
+}
+
+.noticia-card.fade-out {
+    opacity: 0;
+}
+
+.noticia-card.fade-in {
+    opacity: 1;
+}
+
+.noticia-manchete {
+    margin-top: 7em;
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-bottom: 18px;
+    text-align: center;
+    color: #222;
+}
+
+.noticia-descricao {
+    
+    font-size: 1em;
+    margin-bottom: 18px;
+    text-align: center;
+    color: #222;
+}
+
+.noticia-fonte {
+    font-size: 1em;
+    margin-bottom: 18px;
+    text-align: center;
+    color: #222;
+}
+
+.noticia-link {
+    background: #19CCB2;
+    color: #222;
+    border: 2px solid #222;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background 0.2s, color 0.2s;
+    text-align: center;
+    display: inline-block;
+}
+
+.noticia-link:hover {
+    background: #652E72;
+    color: #fff;
+}

@@ -33,12 +33,20 @@
     </div>
   </div>
 
+    <div class="patrocinadores-container">
+        <?php include 'components/patrocinadores/patrocinadores.php'; ?>
+    </div>
+    
     <!-- Carrega a galeria de imagens caso n exista uma na página, comentar essa linha, caso necessario, ajustar galeria no respectivo caminho -->
-
     <div id="galeria" class="galeria">
       <?php require_once 'components/galeria/galeria.php'; ?>
-    </div>    
-
+    </div>
+    
+    <div class="noticias-container">
+        <?php include 'components/noticias/noticias.php'; ?>
+    </div>
+    <div class="footer">
+        <?php include 'components/footer/footer.php'; ?>
     <script>
     // Função que carrega uma seção e move a caixa verde (highlight) para o botão clicado
     function carregarSecao(botao, nomeArquivo) {

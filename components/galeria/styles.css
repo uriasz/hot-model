@@ -5,6 +5,11 @@ body {
   background-color: #f9f9f9;
 }
 
+.galeria {
+  border-bottom: 1px solid;
+  padding-bottom: 5em;
+}
+
 .card-section {
   padding: 20px;
   max-width: 1300px;
@@ -50,22 +55,34 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   max-height: 600px;
-  overflow-y: auto;
+  overflow-y: scroll;
   padding-right: 8px;
+  padding: 1em;
+  scrollbar-width: thin; /* Firefox: barra fina */
+  scrollbar-color: transparent transparent; /* Firefox: thumb invisível */
+}
+
+/* Chrome, Edge, Safari: thumb invisível */
+.cards-container::-webkit-scrollbar {
+  width: 8px; /* largura da barra */
+  background: #e0e0e0; /* cor da barra */
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+  background: transparent; /* thumb invisível */
 }
 
 .card {
   background-color: #652E72;
-  height: 200px;
-  width: 300px;
+  height: 300px;
+  width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   border: 1px solid #000000;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  transition: transform 0.2s ease;
-  overflow: hidden;
+  transition: transform 0.2s ease, z-index 0.2s;
   position: relative;
   padding: 0;
 }
@@ -80,7 +97,7 @@ body {
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .modal {

@@ -1,0 +1,29 @@
+.patrocinadores-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.patrocinadores-titulo {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    border-top: 1px solid;
+    padding: 40px;
+}
+
+.patrocinadores-logos {
+    display: flex;
+    justify-content: center;
+    gap: 8em;
+    border-bottom: 1px solid;
+    padding-bottom: 20px;
+}
+
+.patrocinador-logo {
+    max-width: 150px;
+    height: auto;
+    transition: transform 0.3s ease;
+    gap: 2em;
+}

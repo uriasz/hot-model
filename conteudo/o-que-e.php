@@ -93,6 +93,11 @@
         height: 52px;
         font-size: 20px;
         font-weight: medium;
+        transition: transform 0.2s ease;
+    }
+
+    .btn-info:hover {
+        transform: scale(1.02); /* Faz o botão crescer */
     }
 
     .seta-grande {

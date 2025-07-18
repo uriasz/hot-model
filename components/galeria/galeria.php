@@ -45,44 +45,52 @@
         img.alt = nomeImagem;
         img.className = 'card-img';
 
+        // Legenda oculta para filtro
+        const legenda = document.createElement('span');
+        legenda.textContent = nomeImagem;
+        legenda.style.display = 'none';
+
         card.appendChild(img);
+        card.appendChild(legenda);
 
-        // Adiciona evento para abrir modal
+        // Evento para abrir modal
         card.onclick = function() {
-        document.getElementById('modalImg').src = img.src;
-        document.getElementById('imageModal').style.display = 'flex';
-    };
+            document.getElementById('modalImg').src = img.src;
+            document.getElementById('imageModal').style.display = 'flex';
+        };
 
-    return card;
+        return card;
     }
 
-    // Fecha o modal ao clicar no X
+    // Fecha o modal ao clicar no X ou fora da imagem
     document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('closeModal').onclick = function() {
-    document.getElementById('imageModal').style.display = 'none';
-    };
-    // Fecha ao clicar fora da imagem
-    document.getElementById('imageModal').onclick = function(e) {
-        if (e.target === this) {
-            this.style.display = 'none';
-    }
-    };
+        document.getElementById('closeModal').onclick = function() {
+            document.getElementById('imageModal').style.display = 'none';
+        };
+        document.getElementById('imageModal').onclick = function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        };
+
+        // Adiciona os cards no container
+        const container = document.getElementById('cardsContainer');
+        imagens.forEach(nomeImagem => {
+            const card = criarCard(nomeImagem);
+            container.appendChild(card);
+        });
+
+        // Busca automática ao digitar
+        document.getElementById('searchInput').addEventListener('input', filtrarCards);
     });
 
-  // Adiciona os cards no container
-    const container = document.getElementById('cardsContainer');
-    imagens.forEach(nomeImagem => {
-    const card = criarCard(nomeImagem);
-    container.appendChild(card);
-  });
-
-  // Filtro simples para busca de cards pelo nome da imagem
-  function filtrarCards() {
+    // Filtro simples para busca de cards pelo nome da imagem
+    function filtrarCards() {
         const termo = document.getElementById('searchInput').value.toLowerCase();
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
-        const legenda = card.querySelector('span').textContent.toLowerCase();
-        card.style.display = legenda.includes(termo) ? 'flex' : 'none';
-    });
-  }
+            const legenda = card.querySelector('span').textContent.toLowerCase();
+            card.style.display = legenda.includes(termo) ? 'flex' : 'none';
+        });
+    }
 </script>

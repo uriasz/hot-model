@@ -1,0 +1,165 @@
+#box_foot {
+     /* cobre toda a largura da tela */
+    background-color: #7737a1;
+    border-top: 0.001em solid #fff;
+    padding: 0em 1em 2em 1em;
+    box-sizing: border-box;
+    max-height: 35em;
+    align-items: center;
+    border-top: 1px solid;
+    margin-top: 20em;
+    /* Removido max-width e margin */
+}
+
+#box_foot .menu {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 2.5em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    width: 100%;
+    justify-content: center;
+}
+
+#box_foot ul {
+    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 170px;
+    /* Garante que as colunas fiquem lado a lado */
+}
+
+#box_foot ul h4 {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.7em;
+    margin-top: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+#box_foot ul li {
+    margin-bottom: 0.5em;
+    
+}
+
+#box_foot ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: 'Roboto Slab', serif;
+    transition: text-decoration 0.2s, color 0.2s;
+    justify-content: center;
+}
+
+#box_foot ul li a:hover {
+    text-decoration: underline;
+    color: #652E72;
+}
+
+#box_texto_foot {
+    width: 100%;
+    text-align: left;
+    margin-top: 1.5em;
+    
+}
+
+
+.texto_foot {
+    color: #fff;
+    font-size: 1.1em;
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.5;
+    text-align: center;
+}
+
+#box_redes_sociais_foot {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5em;
+}
+
+.redes_sociais_foot {
+    display: flex;
+    gap: 0.7em;
+}
+
+.redes_sociais_foot div {
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.redes_sociais_foot div:hover {
+    background-color: #652E72;
+}
+
+#mapa_lai {
+    background: url('assets/ouvidoria.svg') no-repeat center/60% #fff;
+}
+#mapa_fb {
+    background: url('assets/facebook.svg') no-repeat center/60% #fff;
+}
+#mapa_tw {
+    background: url('assets/twitter.svg') no-repeat center/60% #fff;
+}
+#mapa_yt {
+    background: url('assets/youtube.svg') no-repeat center/60% #fff;
+}
+#mapa_fc {
+    background: url('assets/instagram.svg') no-repeat center/60% #fff;
+}
+
+/* Responsivo */
+@media (max-width: 1100px) {
+    #box_foot .menu {
+        gap: 1.2em;
+    }
+    #box_foot ul {
+        min-width: 130px;
+    }
+}
+@media (max-width: 900px) {
+    #box_foot .menu {
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+    #box_foot ul {
+        min-width: 110px;
+    }
+    #box_texto_foot, #box_redes_sociais_foot {
+        text-align: center;
+        justify-content: center;
+    }
+}
+@media (max-width: 700px) {
+    #box_foot .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5em;
+    }
+    #box_foot ul {
+        min-width: 100%;
+    }
+    #box_texto_foot, #box_redes_sociais_foot {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+#box_foot,
+#box_foot ul h4,
+#box_foot ul li,
+#box_foot ul li a,
+.texto_foot {
+    font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', sans-serif !important;
+}
